@@ -7,14 +7,13 @@ const FriendDetails = () => {
     useEffect(() => {
         fetch(`https://jsonplaceholder.typicode.com/users/${friendId}`).then(res => res.json()).then(data => setFriend(data))
     }, [])
-    console.log(friend)
-    const { name, email } = friend
+    const { name, email, address } = friend
     return (
         <div style={{ margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
             <div style={{ alignItems: 'center', width: '20rem', margin: '1rem', padding: '1rem', border: '1px solid black', borderRadius: '1rem' }}>
                 <h2>Name: {name}</h2>
                 <p>Email: {email}</p>
-                <p></p>
+                <p>Address: {address?.city} <br /> <small>Lat: {address?.geo?.lng}</small> </p>
             </div>
         </div>
     );
