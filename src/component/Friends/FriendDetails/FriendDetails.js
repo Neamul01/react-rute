@@ -10,10 +10,12 @@ const FriendDetails = () => {
     console.log(friend)
     const { name, email } = friend
     return (
-        <div style={{ alignItems: 'center', width: '20rem', margin: '1rem', padding: '1rem', border: '1px solid black', borderRadius: '1rem' }}>
-            <h2>Name: {name}</h2>
-            <p>Email: {email}</p>
-            <p></p>
+        <div style={{ margin: '0 auto', display: 'flex', justifyContent: 'center' }}>
+            <div style={{ alignItems: 'center', width: '20rem', margin: '1rem', padding: '1rem', border: '1px solid black', borderRadius: '1rem' }}>
+                <h2>Name: {name}</h2>
+                <p>Email: {email}</p>
+                <p></p>
+            </div>
         </div>
     );
 };
