@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Friend from './Friend/Friend';
 
 const Friends = () => {
+    const [friends, setFriends] = useState([]);
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/users').then(res => res.json()).then(data => setFriends(data))
+    }, [])
     return (
         <div>
             <h2>Hello this is Friends area !!!!!</h2>
+            <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', margin: '5rem' }}>
+                {
+                    friends.map(friend => <Friend key={friend.id} friend={friend}></Friend>)
+                }
+            </div>
         </div>
     );
 };
